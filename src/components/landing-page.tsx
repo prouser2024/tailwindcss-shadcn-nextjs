@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import { useInView } from 'react-intersection-observer'
-import { toast } from "@/components/ui/toast"
+import { Toast } from "@/components/ui/toast"
 
 export default function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -294,7 +294,7 @@ export default function Page() {
     e.preventDefault()
     // Handle subscription logic here
     console.log('Subscribed:', email)
-    toast({
+    Toast({
       title: "Subscribed!",
       description: "You've successfully subscribed to our newsletter.",
     })
