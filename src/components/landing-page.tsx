@@ -11,6 +11,9 @@ import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import { useInView } from 'react-intersection-observer'
 import { Toast } from "@/components/ui/toast"
+import { toast } from "@/hooks/use-toast"
+import { FaqSection } from "@/components/faq-section"
+import Navbar from './navbar'
 
 export default function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -188,7 +191,7 @@ export default function Page() {
     {
       title: "Learning Hub",
       icon: <Presentation className="w-6 h-6 md:w-8 md:h-8" />,
-      color: "from-green-400 to-green-600",
+      color: "from-blue-400 to-blue-600",
       features: [
         {
           title: "Expert Articles",
@@ -205,7 +208,7 @@ export default function Page() {
     {
       title: "Network Central",
       icon: <Network className="w-6 h-6 md:w-8 md:h-8" />,
-      color: "from-purple-400 to-purple-600",
+      color: "from-blue-400 to-blue-600",
       features: [
         {
           title: "Industry Webinars",
@@ -222,7 +225,7 @@ export default function Page() {
     {
       title: "Career Launchpad",
       icon: <Briefcase className="w-6 h-6 md:w-8 md:h-8" />,
-      color: "from-orange-400 to-orange-600",
+      color: "from-blue-400 to-blue-600",
       features: [
         {
           title: "Opportunity Board",
@@ -244,7 +247,7 @@ export default function Page() {
     {
       title: "Community Hub",
       icon: <MessageSquare className="w-6 h-6 md:w-8 md:h-8" />,
-      color: "from-pink-400 to-pink-600",
+      color: "from-blue-400 to-blue-600",
       features: [
         {
           title: "Idea Exchange",
@@ -294,7 +297,7 @@ export default function Page() {
     e.preventDefault()
     // Handle subscription logic here
     console.log('Subscribed:', email)
-    Toast({
+    toast({
       title: "Subscribed!",
       description: "You've successfully subscribed to our newsletter.",
     })
@@ -544,8 +547,8 @@ export default function Page() {
                   <stop offset="100%" stopColor="rgba(255,255,255,0)"/>
                 </linearGradient>
               </defs>
-              <rect width="100%" height="100%" fill="url(#grid)" />
-              <rect width="100%" height="100%" fill="url(#fadeGradient)" />
+              <rect width="100%" height="100%" fill="url(#grid)"/>
+              <rect width="100%" height="100%" fill="url(#fadeGradient)"/>
             </svg>
           </div>
           <div className="container mx-auto px-4 relative z-10">
@@ -770,6 +773,10 @@ export default function Page() {
             </svg>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <FaqSection />
+        {/* Removed Newsletter Section */}
       </main>
 
       {/* Footer */}
